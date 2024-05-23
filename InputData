@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class InputData {
+    public String[] enterData() {
+        Scanner iScanner = new Scanner(System.in);
+        while (true){
+            System.out.println("Введите через пробел Ф.И.О, дату рождения(dd.mm.yyyy), номер телефона(+7 = 8, без пробелов), пол(f/m) ");
+            String data = iScanner.nextLine();
+            String[] arrayData = data.split(" ");
+            if (arrayData.length == 6) {
+                return arrayData;
+            } else if (arrayData.length < 6){
+                System.out.println("the data is not fully entered, please try again");
+            } else System.out.println("you have entered more data than you need, please try again");
+        }
+
+    }
+}
